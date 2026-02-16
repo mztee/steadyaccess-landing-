@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://YOUR-SITE.netlify.app/</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+**IMPORTANT:** Replace `https://YOUR-SITE.netlify.app/` with your actual Netlify URL!
+
+4. Click "Commit changes"
+
+**For robots.txt:**
+1. Click "Add file" → "Create new file"  
+2. Name it: `robots.txt`
+3. Paste this:
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR-SITE.netlify.app/sitemap.xml
+```
+
+**IMPORTANT:** Again, replace with your actual URL!
+
+4. Click "Commit changes"
+
+---
+
+## After Uploading:
+
+Your GitHub should look like this:
+```
+your-repository/
+├── index.html
+├── sitemap.xml
+└── robots.txt
