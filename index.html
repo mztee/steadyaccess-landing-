@@ -5,72 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>SteadyAccess - Explain once. Be supported everywhere.</title>
-    <meta name="description" content="SteadyAccess helps people managing chronic illness, disability, or fluctuating health organize care and clearly communicate support needs—without repeating themselves. Create your free Access Card today.">
-    <meta name="keywords" content="chronic illness management, disability support, health communication, access card, medical appointments, medication tracker, care coordination, accessibility tools, health organization, disability advocacy">
+    <meta name="description" content="SteadyAccess helps people with chronic illness, disability, neurodivergence (ADHD, autism, etc.), or any support needs organize care and clearly communicate what they need—without repeating themselves.">
+    <meta name="keywords" content="chronic illness management, disability support, neurodivergent, autism, ADHD, health communication, access card, medical appointments, medication tracker, care coordination, accessibility tools">
     <meta name="author" content="SteadyAccess">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="jkmAoWXWoWPCFESqXZ8j_Jo9nbTTA7x3CrSs51_4vT4" />
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-site.netlify.app/">
+    <meta property="og:url" content="https://steadyacess.netlify.app/">
     <meta property="og:title" content="SteadyAccess - Explain once. Be supported everywhere.">
-    <meta property="og:description" content="Organize your care and communicate support needs clearly—without repeating yourself. Free to start.">
-    <meta property="og:site_name" content="SteadyAccess">
+    <meta property="og:description" content="Organize your care and communicate support needs clearly—without repeating yourself.">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://your-site.netlify.app/">
     <meta name="twitter:title" content="SteadyAccess - Explain once. Be supported everywhere.">
-    <meta name="twitter:description" content="Organize your care and communicate support needs clearly—without repeating yourself. Free to start.">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://your-site.netlify.app/">
+    <link rel="canonical" href="https://steadyacess.netlify.app/">
     
-    <!-- JSON-LD Structured Data for Rich Results -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "SteadyAccess",
-      "url": "https://your-site.netlify.app",
-      "description": "Organize your care and communicate support needs clearly—without repeating yourself.",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "SteadyAccess"
-      }
+      "url": "https://steadyacess.netlify.app",
+      "description": "Organize your care and communicate support needs clearly.",
+      "applicationCategory": "HealthApplication"
     }
     </script>
     
     <style>
         :root {
             --color-primary: #2563eb;
+            --color-primary-dark: #1e40af;
             --color-primary-hover: #1d4ed8;
             --color-primary-light: #dbeafe;
+            --color-accent: #8b5cf6;
+            --color-accent-light: #ede9fe;
+            --color-success: #059669;
             --color-text: #1f2937;
-            --color-text-secondary: #4b5563;
+            --color-text-secondary: #6b7280;
             --color-background: #ffffff;
             --color-background-alt: #f9fafb;
             --color-border: #e5e7eb;
-            --color-success: #059669;
-            --color-error: #dc2626;
             --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            --space-2: 1rem;
-            --space-3: 1.5rem;
-            --space-4: 2rem;
-            --space-5: 2.5rem;
-            --space-6: 3rem;
-            --space-8: 4rem;
-            --max-width: 1200px;
-            --border-radius: 0.5rem;
-            --border-radius-lg: 1rem;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,7 +63,8 @@
             font-size: 1.125rem;
             line-height: 1.6;
             color: var(--color-text);
-            background: var(--color-background);
+            background: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 100%);
+            min-height: 100vh;
         }
         
         *:focus-visible {
@@ -89,143 +73,250 @@
         }
         
         .container {
-            max-width: var(--max-width);
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--space-3);
+            padding: 0 1.5rem;
         }
         
+        /* Header with glassmorphism */
         .header {
-            padding: var(--space-3) 0;
-            border-bottom: 1px solid var(--color-border);
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
         }
         
         .logo-container {
             display: inline-block;
+            transition: transform 0.2s;
         }
         
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Hero with gradient */
         .hero {
-            padding: var(--space-8) 0;
+            padding: 5rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+            z-index: -1;
         }
         
         .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: var(--space-3);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--color-text-secondary);
             max-width: 700px;
-            margin: 0 auto var(--space-5);
+            margin: 0 auto 2.5rem;
             line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
         
         .hero-ctas {
             display: flex;
-            gap: var(--space-3);
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: var(--space-5);
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
         .hero-image {
             max-width: 800px;
             margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
         }
         
+        /* Buttons with hover effects */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: var(--space-3) var(--space-5);
-            font-size: 1.25rem;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: var(--border-radius);
+            border-radius: 0.75rem;
             border: none;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             min-height: 56px;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-primary {
-            background: var(--color-primary);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             color: white;
+            box-shadow: var(--shadow-md);
         }
         
-        .btn-primary:hover { background: var(--color-primary-hover); }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
         
         .btn-secondary {
-            background: transparent;
+            background: white;
             color: var(--color-primary);
             border: 2px solid var(--color-primary);
+            box-shadow: var(--shadow-sm);
         }
         
-        .btn-secondary:hover { background: var(--color-primary-light); }
+        .btn-secondary:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
         
+        .btn-text {
+            background: transparent;
+            border: none;
+            color: var(--color-text-secondary);
+            padding: 0.5rem;
+            min-height: auto;
+        }
+        
+        .btn-text:hover {
+            color: var(--color-primary);
+            transform: translateX(-4px);
+        }
+        
+        /* Mini flow with card design */
         .mini-flow {
-            background: var(--color-background-alt);
-            padding: var(--space-8) 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%);
+            padding: 5rem 0;
+            position: relative;
         }
         
-        .flow-container { max-width: 600px; margin: 0 auto; }
+        .mini-flow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20px 20px, rgba(37, 99, 235, 0.05) 2px, transparent 0);
+            background-size: 40px 40px;
+            opacity: 0.5;
+        }
+        
+        .flow-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
         
         .flow-step {
             display: none;
             background: white;
-            padding: var(--space-6);
-            border-radius: var(--border-radius-lg);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
         
         .flow-step.active {
             display: block;
-            animation: slideIn 0.3s ease-out;
+            animation: slideInScale 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
         
         .flow-progress {
             display: flex;
-            gap: 0.5rem;
-            margin-bottom: var(--space-5);
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
             justify-content: center;
         }
         
         .progress-dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: var(--color-border);
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
         }
         
-        .progress-dot.active { background: var(--color-primary); }
-        .progress-dot.complete { background: var(--color-success); }
+        .progress-dot.active {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            transform: scale(1.3);
+        }
+        
+        .progress-dot.complete {
+            background: var(--color-success);
+        }
         
         .flow-title {
             font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: var(--space-2);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text);
         }
         
         .flow-description {
             font-size: 1.125rem;
             color: var(--color-text-secondary);
-            margin-bottom: var(--space-4);
+            margin-bottom: 2rem;
         }
         
         .flow-label {
             display: block;
             font-size: 1.125rem;
             font-weight: 600;
-            margin-bottom: var(--space-2);
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
         }
         
         .optional-tag {
@@ -237,30 +328,32 @@
         .flow-textarea {
             width: 100%;
             min-height: 150px;
-            padding: var(--space-3);
+            padding: 1rem;
             font-size: 1.125rem;
             font-family: var(--font-base);
             border: 2px solid var(--color-border);
-            border-radius: var(--border-radius);
+            border-radius: 0.75rem;
             resize: vertical;
+            transition: all 0.2s;
         }
         
         .flow-textarea:focus {
             border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
             outline: none;
         }
         
         .context-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: var(--space-3);
-            margin-bottom: var(--space-4);
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .context-option {
-            padding: var(--space-4);
+            padding: 1.5rem 1rem;
             border: 2px solid var(--color-border);
-            border-radius: var(--border-radius);
+            border-radius: 0.75rem;
             background: white;
             cursor: pointer;
             text-align: center;
@@ -276,48 +369,49 @@
         .context-option:hover {
             border-color: var(--color-primary);
             background: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
         
         .context-option.selected {
-            background: var(--color-primary);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             color: white;
-            border-color: var(--color-primary);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
         
         .flow-actions {
             display: flex;
-            gap: var(--space-3);
-            margin-top: var(--space-4);
+            gap: 1rem;
+            margin-top: 2rem;
         }
         
-        .flow-actions .btn { flex: 1; }
-        
-        .btn-text {
-            background: transparent;
-            border: none;
-            color: var(--color-text-secondary);
-            padding: var(--space-2);
-            cursor: pointer;
-            font-size: 1.125rem;
-            min-height: auto;
+        .flow-actions .btn {
+            flex: 1;
         }
         
-        .btn-text:hover { color: var(--color-primary); }
-        
+        /* Card preview with shadow */
         .card-preview {
             background: white;
             border: 2px solid var(--color-border);
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-5);
-            margin-bottom: var(--space-4);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+        }
+        
+        .card-preview:hover {
+            box-shadow: var(--shadow-xl);
         }
         
         .card-preview-header {
             display: flex;
             justify-content: space-between;
             align-items: start;
-            margin-bottom: var(--space-4);
-            padding-bottom: var(--space-3);
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
             border-bottom: 2px solid var(--color-border);
         }
         
@@ -328,19 +422,24 @@
         
         .card-preview-context {
             padding: 0.5rem 1rem;
-            background: var(--color-primary-light);
+            background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%);
             color: var(--color-primary);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
             font-weight: 600;
         }
         
-        .card-section { margin-bottom: var(--space-4); }
+        .card-section {
+            margin-bottom: 2rem;
+        }
         
         .card-section-title {
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 700;
-            margin-bottom: var(--space-2);
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         .card-section-content {
@@ -352,64 +451,33 @@
         .card-empty {
             color: var(--color-text-secondary);
             font-style: italic;
-        }
-        
-        .form-group { margin-bottom: var(--space-3); }
-        
-        .form-label {
-            display: block;
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: var(--space-3);
-            font-size: 1.125rem;
-            border: 2px solid var(--color-border);
-            border-radius: var(--border-radius);
-            font-family: var(--font-base);
-        }
-        
-        .form-input:focus {
-            border-color: var(--color-primary);
-            outline: none;
-        }
-        
-        .form-helper {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            margin-top: 0.5rem;
+            opacity: 0.6;
         }
         
         .form-error {
             font-size: 1rem;
-            color: var(--color-error);
+            color: #dc2626;
             margin-top: 0.5rem;
+            padding: 0.75rem;
+            background: #fee2e2;
+            border-radius: 0.5rem;
         }
         
-        .form-success {
-            background: #d1fae5;
-            border: 2px solid var(--color-success);
-            color: #065f46;
-            padding: var(--space-4);
-            border-radius: var(--border-radius);
-            margin-top: var(--space-4);
-            text-align: center;
+        /* Sections with improved spacing */
+        .section {
+            padding: 5rem 0;
         }
-        
-        .section { padding: var(--space-8) 0; }
         
         .section-header {
             text-align: center;
-            margin-bottom: var(--space-6);
+            margin-bottom: 4rem;
         }
         
         .section-title {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            margin-bottom: var(--space-2);
+            margin-bottom: 1rem;
+            color: var(--color-text);
         }
         
         .section-subtitle {
@@ -419,22 +487,32 @@
             margin: 0 auto;
         }
         
+        /* Steps grid with hover effects */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-5);
-            margin-top: var(--space-6);
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
         
         .step-card {
             text-align: center;
-            padding: var(--space-4);
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
         }
         
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--color-primary-light);
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%);
             color: var(--color-primary);
             border-radius: 50%;
             display: flex;
@@ -442,13 +520,14 @@
             justify-content: center;
             font-size: 2rem;
             font-weight: 700;
-            margin: 0 auto var(--space-3);
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow-md);
         }
         
         .step-title {
             font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: var(--space-2);
+            margin-bottom: 1rem;
         }
         
         .step-description {
@@ -457,37 +536,47 @@
             line-height: 1.7;
         }
         
+        /* Features with better cards */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-4);
-            margin-top: var(--space-6);
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .feature-card {
             background: white;
-            border: 2px solid var(--color-border);
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-5);
+            border: 1px solid var(--color-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--color-primary);
         }
         
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--color-primary-light);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%);
             color: var(--color-primary);
-            border-radius: var(--border-radius);
+            border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: var(--space-3);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
         }
         
         .feature-title {
             font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: var(--space-2);
+            margin-bottom: 1rem;
         }
         
         .feature-description {
@@ -496,33 +585,47 @@
             line-height: 1.7;
         }
         
+        /* Code of Care with gradient */
         .code-of-care {
-            background: var(--color-primary-light);
-            padding: var(--space-8) 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%);
+            padding: 5rem 0;
+            position: relative;
         }
         
         .code-list {
             list-style: none;
             max-width: 700px;
-            margin: var(--space-6) auto 0;
+            margin: 3rem auto 0;
         }
         
         .code-item {
-            padding: var(--space-3);
-            margin-bottom: var(--space-3);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             background: white;
-            border-radius: var(--border-radius);
+            border-radius: 1rem;
             font-size: 1.125rem;
             line-height: 1.7;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--color-primary);
+            transition: all 0.3s;
         }
         
-        .code-item strong { color: var(--color-primary); }
+        .code-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-lg);
+        }
         
+        .code-item strong {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+        
+        /* Pricing with featured card */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-5);
-            margin-top: var(--space-6);
+            gap: 2.5rem;
+            margin-top: 3rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -531,54 +634,69 @@
         .pricing-card {
             background: white;
             border: 2px solid var(--color-border);
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-6);
+            border-radius: 1.5rem;
+            padding: 3rem;
             text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
         }
         
         .pricing-card.featured {
             border-color: var(--color-primary);
-            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.08) translateY(-8px);
         }
         
         .pricing-badge {
             display: inline-block;
             padding: 0.5rem 1rem;
-            background: var(--color-primary);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             color: white;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
             font-weight: 600;
-            margin-bottom: var(--space-2);
+            margin-bottom: 1rem;
         }
         
         .pricing-title {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: var(--space-2);
+            margin-bottom: 1rem;
         }
         
         .pricing-price {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            color: var(--color-primary);
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.5rem;
         }
         
         .pricing-period {
             font-size: 1.125rem;
             color: var(--color-text-secondary);
-            margin-bottom: var(--space-4);
+            margin-bottom: 2rem;
         }
         
         .pricing-features {
             list-style: none;
             text-align: left;
-            margin-bottom: var(--space-5);
+            margin-bottom: 2.5rem;
         }
         
         .pricing-features li {
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             font-size: 1.125rem;
             color: var(--color-text-secondary);
             display: flex;
@@ -590,59 +708,96 @@
             content: "✓";
             color: var(--color-success);
             font-weight: 700;
+            font-size: 1.25rem;
             flex-shrink: 0;
         }
         
+        /* Footer */
         .footer {
-            background: var(--color-background-alt);
-            padding: var(--space-6) 0;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 3rem 0;
             margin-top: 5rem;
-            border-top: 1px solid var(--color-border);
         }
         
         .footer-content {
             text-align: center;
-            color: var(--color-text-secondary);
-            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-content p {
+            margin-bottom: 1rem;
         }
         
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: var(--space-4);
-            margin-top: var(--space-3);
+            gap: 2rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
         
         .footer-links a {
-            color: var(--color-text-secondary);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
+            transition: all 0.2s;
         }
         
-        .footer-links a:hover { color: var(--color-primary); }
+        .footer-links a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
         
+        /* Mobile responsive */
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .hero-ctas { flex-direction: column; }
-            .hero-ctas .btn { width: 100%; }
-            .flow-step { padding: var(--space-4); }
-            .context-grid { grid-template-columns: 1fr; }
-            .flow-actions { flex-direction: column; }
-            .section-title { font-size: 2rem; }
-            .steps-grid, .features-grid { grid-template-columns: 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; }
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-ctas {
+                flex-direction: column;
+            }
+            
+            .hero-ctas .btn {
+                width: 100%;
+            }
+            
+            .flow-step {
+                padding: 2rem;
+            }
+            
+            .context-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-actions {
+                flex-direction: column;
+            }
+            
+            .steps-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
         }
         
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
@@ -650,7 +805,6 @@
     <header class="header">
         <div class="container">
             <div class="logo-container">
-                <!-- Embedded Logo SVG -->
                 <svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="30" cy="30" r="24" fill="#2563eb" opacity="0.1"/>
                     <path d="M30 15c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z" fill="#2563eb"/>
@@ -669,13 +823,12 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Explain once. Be supported everywhere.</h1>
-                <p class="hero-subtitle">SteadyAccess helps people managing chronic illness, disability, or fluctuating health organize care and clearly communicate support needs—without repeating themselves.</p>
+                <p class="hero-subtitle">SteadyAccess helps people with chronic illness, disability, neurodivergence (ADHD, autism, etc.), or any support needs organize care and clearly communicate what they need—without repeating themselves.</p>
                 <div class="hero-ctas">
                     <a href="#mini-flow" class="btn btn-primary">Create an Access Card — Free</a>
                     <a href="#how-it-works" class="btn btn-secondary">Learn more</a>
                 </div>
                 
-                <!-- Embedded Hero Illustration -->
                 <div class="hero-image">
                     <svg width="100%" height="auto" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -688,7 +841,6 @@
                         <circle cx="120" cy="80" r="60" fill="#2563eb" opacity="0.05"/>
                         <circle cx="680" cy="420" r="80" fill="#2563eb" opacity="0.05"/>
                         <circle cx="700" cy="100" r="40" fill="#6366f1" opacity="0.05"/>
-                        
                         <g transform="translate(200, 100)">
                             <rect x="4" y="4" width="400" height="280" rx="16" fill="#000000" opacity="0.08"/>
                             <rect width="400" height="280" rx="16" fill="white" stroke="#e5e7eb" stroke-width="2"/>
@@ -706,7 +858,6 @@
                             <circle cx="365" cy="250" r="18" fill="#2563eb"/>
                             <path d="M365 243 l5 3 l-5 3 M360 246 l10 0" stroke="white" stroke-width="2" stroke-linecap="round"/>
                         </g>
-                        
                         <g transform="translate(50, 80)">
                             <rect width="140" height="100" rx="12" fill="white" stroke="#e5e7eb" stroke-width="2" opacity="0.9"/>
                             <circle cx="40" cy="35" r="18" fill="#dbeafe"/>
@@ -716,7 +867,6 @@
                             <rect x="20" y="60" width="100" height="6" rx="3" fill="#dbeafe"/>
                             <rect x="20" y="72" width="80" height="6" rx="3" fill="#dbeafe"/>
                         </g>
-                        
                         <g transform="translate(600, 320)">
                             <rect width="150" height="120" rx="12" fill="white" stroke="#e5e7eb" stroke-width="2" opacity="0.9"/>
                             <text x="15" y="25" font-family="system-ui" font-size="12" font-weight="700" fill="#1f2937">💊 Medications</text>
@@ -729,10 +879,8 @@
                             <rect x="30" y="80" width="70" height="6" rx="3" fill="#e5e7eb"/>
                             <rect x="15" y="100" width="120" height="8" rx="4" fill="#dbeafe"/>
                         </g>
-                        
                         <path d="M 190 130 Q 250 150 300 180" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,5" opacity="0.3" fill="none"/>
                         <path d="M 600 280 Q 550 300 500 320" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,5" opacity="0.3" fill="none"/>
-                        
                         <circle cx="100" cy="380" r="20" fill="#059669"/>
                         <path d="M 93 380 l 5 5 l 10 -10" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
                         <circle cx="700" cy="200" r="20" fill="#059669"/>
@@ -792,7 +940,7 @@
                     
                     <div class="flow-step" data-step="4">
                         <h3 class="flow-title">Join the waitlist</h3>
-                        <p class="flow-description">We're launching soon! Enter your email to be notified when SteadyAccess is ready.</p>
+                        <p class="flow-description">We're launching soon! Enter your details to be notified when SteadyAccess is ready.</p>
                         
                         <div class="card-preview">
                             <div class="card-preview-header">
@@ -809,21 +957,12 @@
                             </div>
                         </div>
                         
-                        <form class="waitlist-form" onsubmit="handleWaitlist(event)" id="waitlist-form">
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" id="email" class="form-input" required placeholder="you@example.com">
-                                <p class="form-helper">We'll email you when we launch. No spam, promise!</p>
-                            </div>
-                            <div class="flow-actions">
-                                <button type="button" class="btn btn-text" onclick="prevStep()">← Back</button>
-                                <button type="submit" class="btn btn-primary">Join Waitlist</button>
-                            </div>
-                        </form>
+                        <div style="margin-top: 2rem;">
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdR4aS7su04Cpisrsg64URyBGcCLpw1NCdrZ8Sv1I_U61jerw/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" style="border: 2px solid var(--color-border); border-radius: 1rem;">Loading…</iframe>
+                        </div>
                         
-                        <div id="success-message" class="form-success" style="display: none;">
-                            <strong>🎉 You're on the list!</strong><br>
-                            We'll email you as soon as SteadyAccess launches.
+                        <div class="flow-actions" style="margin-top: 2rem;">
+                            <button type="button" class="btn btn-text" onclick="prevStep()">← Back to preview</button>
                         </div>
                     </div>
                 </div>
@@ -856,7 +995,7 @@
             </div>
         </section>
         
-        <section class="section" style="background: var(--color-background-alt);">
+        <section class="section" style="background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%);">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Everything you need</h2>
@@ -991,6 +1130,10 @@
                 if (i + 1 < step) dot.classList.add('complete');
                 else if (i + 1 === step) dot.classList.add('active');
             });
+            
+            if (window.innerWidth < 768) {
+                document.getElementById('mini-flow').scrollIntoView({ behavior: 'smooth' });
+            }
         }
         
         function selectContext(button) {
@@ -1007,17 +1150,6 @@
             helpsEl.innerHTML = flowData.whatHelps.trim() ? flowData.whatHelps.replace(/\n/g, '<br>') : '<span class="card-empty">Not specified</span>';
             const avoidEl = document.getElementById('preview-avoid');
             avoidEl.innerHTML = flowData.whatAvoid.trim() ? flowData.whatAvoid.replace(/\n/g, '<br>') : '<span class="card-empty">Not specified</span>';
-        }
-        
-        function handleWaitlist(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            const waitlistData = { email: email, flowData: flowData, timestamp: new Date().toISOString() };
-            const existing = JSON.parse(localStorage.getItem('waitlist') || '[]');
-            existing.push(waitlistData);
-            localStorage.setItem('waitlist', JSON.stringify(existing));
-            document.getElementById('waitlist-form').style.display = 'none';
-            document.getElementById('success-message').style.display = 'block';
         }
         
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
