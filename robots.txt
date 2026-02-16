@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://steadyaccess.netlify.app/sitemap.xml
+Sitemap: https://steadyacess.netlify.app/sitemap.xml
