@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>SteadyAccess - Explain once. Be supported everywhere.</title>
-    <meta name="description" content="SteadyAccess helps people with chronic illness, disability, neurodivergence (ADHD, autism, etc.), or any support needs organize care and clearly communicate what they need—without repeating themselves.">
-    <meta name="keywords" content="chronic illness management, disability support, neurodivergent, autism, ADHD, health communication, access card, medical appointments, medication tracker, care coordination, accessibility tools">
+    <meta name="description" content="SteadyAccess helps people with chronic illness, disability, ADHD, autism, fluctuating health, or any support needs organize care and clearly communicate what they need—without repeating themselves.">
+    <meta name="keywords" content="chronic illness management, disability support, ADHD, autism, neurodivergent, fluctuating health, health communication, access card, medical appointments, medication tracker, care coordination, accessibility tools, support needs">
     <meta name="author" content="SteadyAccess">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="jkmAoWXWoWPCFESqXZ8j_Jo9nbTTA7x3CrSs51_4vT4" />
@@ -799,6 +799,28 @@
                 transition-duration: 0.01ms !important;
             }
         }
+        
+        /* Comparison table mobile styles */
+        @media (max-width: 768px) {
+            .section table {
+                font-size: 0.875rem;
+            }
+            
+            .section th,
+            .section td {
+                padding: 0.75rem !important;
+            }
+            
+            .section th div {
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .section th:first-child,
+            .section td:first-child {
+                font-size: 0.875rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -823,7 +845,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Explain once. Be supported everywhere.</h1>
-                <p class="hero-subtitle">SteadyAccess helps people with chronic illness, disability, neurodivergence (ADHD, autism, etc.), or any support needs organize care and clearly communicate what they need—without repeating themselves.</p>
+                <p class="hero-subtitle">SteadyAccess helps people with chronic illness, disability, ADHD, autism, fluctuating health, or any support needs organize care and clearly communicate what they need—without repeating themselves.</p>
                 <div class="hero-ctas">
                     <a href="#mini-flow" class="btn btn-primary">Create an Access Card — Free</a>
                     <a href="#how-it-works" class="btn btn-secondary">Learn more</a>
@@ -995,6 +1017,87 @@
             </div>
         </section>
         
+        <!-- Comparison Section -->
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How is SteadyAccess different?</h2>
+                    <p class="section-subtitle">We're not another medical records app</p>
+                </div>
+                
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: separate; border-spacing: 0 1rem;">
+                            <thead>
+                                <tr style="text-align: left;">
+                                    <th style="padding: 1rem; font-size: 1rem; color: #6b7280;"></th>
+                                    <th style="padding: 1rem; text-align: center;">
+                                        <div style="background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem;">SteadyAccess</div>
+                                    </th>
+                                    <th style="padding: 1rem; text-align: center; color: #6b7280; font-weight: 600; font-size: 1.125rem;">Other Apps</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 1.5rem; font-weight: 600; border-radius: 0.5rem 0 0 0.5rem;">Share support needs easily</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem; border-radius: 0 0.5rem 0.5rem 0;">❌</td>
+                                </tr>
+                                <tr style="background: white;">
+                                    <td style="padding: 1.5rem; font-weight: 600;">Context-aware cards (work/medical/school)</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">❌</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 1.5rem; font-weight: 600; border-radius: 0.5rem 0 0 0.5rem;">Built for ADHD & autism</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem; border-radius: 0 0.5rem 0.5rem 0;">❌</td>
+                                </tr>
+                                <tr style="background: white;">
+                                    <td style="padding: 1.5rem; font-weight: 600;">Supports fluctuating health needs</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">⚠️</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 1.5rem; font-weight: 600; border-radius: 0.5rem 0 0 0.5rem;">Free tier that's actually useful</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem; border-radius: 0 0.5rem 0.5rem 0;">❌</td>
+                                </tr>
+                                <tr style="background: white;">
+                                    <td style="padding: 1.5rem; font-weight: 600;">No vendor lock-in (export anytime)</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">❌</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 1.5rem; font-weight: 600; border-radius: 0.5rem 0 0 0.5rem;">Track medications & allergies</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem; border-radius: 0 0.5rem 0.5rem 0;">✅</td>
+                                </tr>
+                                <tr style="background: white;">
+                                    <td style="padding: 1.5rem; font-weight: 600;">Connect to doctors/pharmacies</td>
+                                    <td style="padding: 1.5rem; text-align: center; color: #6b7280; font-style: italic; font-size: 0.875rem;">Coming soon</td>
+                                    <td style="padding: 1.5rem; text-align: center; font-size: 2rem;">✅</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%); border-radius: 1rem; border-left: 4px solid #2563eb; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937;">The SteadyAccess Difference</h3>
+                        <p style="font-size: 1.125rem; line-height: 1.7; color: #4b5563; margin-bottom: 1rem;">
+                            Other apps help you <strong>store</strong> your medical information. That's important for emergencies.
+                        </p>
+                        <p style="font-size: 1.125rem; line-height: 1.7; color: #4b5563; margin-bottom: 1rem;">
+                            SteadyAccess helps you <strong>communicate</strong> your support needs in everyday situations—at work, school, appointments, and life.
+                        </p>
+                        <p style="font-size: 1.125rem; line-height: 1.7; color: #2563eb; font-weight: 600;">
+                            Because you shouldn't have to explain yourself over and over again.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="section" style="background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%);">
             <div class="container">
                 <div class="section-header">
@@ -1005,12 +1108,12 @@
                     <div class="feature-card">
                         <div class="feature-icon">📋</div>
                         <h3 class="feature-title">Access Profile</h3>
-                        <p class="feature-description">Your central hub for medical information, support needs, and preferences.</p>
+                        <p class="feature-description">Your central hub for medical conditions, allergies, emergency contacts, and support preferences.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🎫</div>
                         <h3 class="feature-title">Access Cards</h3>
-                        <p class="feature-description">Context-specific cards you can share instantly—work, medical, school, or social.</p>
+                        <p class="feature-description">Context-specific cards you can share instantly—work, medical, school, or social. Print or send via link.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📅</div>
@@ -1031,6 +1134,16 @@
                         <div class="feature-icon">👥</div>
                         <h3 class="feature-title">Care Team</h3>
                         <p class="feature-description">Keep contact info for all your providers, specialists, and support people.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <h3 class="feature-title">Share & Print</h3>
+                        <p class="feature-description">Share Access Cards via link or print them. Works digitally or on paper—whatever you need.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Privacy First</h3>
+                        <p class="feature-description">You control what you share. Export your data anytime. No vendor lock-in, ever.</p>
                     </div>
                 </div>
             </div>
